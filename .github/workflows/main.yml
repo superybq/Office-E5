@@ -3,7 +3,13 @@
 
 name: Office E5
 
-on: workflow_dispatch
+on:
+  schedule:
+    - cron: '0 *'
+  release:
+    types: [published]
+  watch:
+    types: [started]
 
 jobs: 
   Call-APi:
